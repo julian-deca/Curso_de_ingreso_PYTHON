@@ -28,7 +28,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        value = prompt(title='valor',prompt='ingrese un valor')
+        alert(title='EJ 02',message=value)
         
         
     

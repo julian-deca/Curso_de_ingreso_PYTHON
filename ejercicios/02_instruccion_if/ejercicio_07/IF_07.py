@@ -11,10 +11,8 @@ apellido:
 Ejercicio: instrucion_if_07
 ---
 Enunciado:
-Los argentinos nativos y por opción desde los dieciséis (16) años y los argentinos
-naturalizados desde los dieciocho (18) años están habilitados a votar. 
-Al presionar el botón  'Mostrar', se deberá informar (utilizando el Dialog Alert) 
-si es o no posible que la persona concurra a votar en base a la información 
+Los argentinos nativos y por opción desde los dieciséis (16) años y los argentinos naturalizados desde los dieciocho (18) años están habilitados a votar. 
+Al presionar el botón  'Calcular', se deberá informar (utilizando el Dialog Alert) si es o no posible que la persona concurra a votar en base a la información 
 suministrada.
 '''
 
@@ -49,5 +47,4 @@ class App(customtkinter.CTk):
     
 if __name__ == "__main__":
     app = App()
-    app.geometry("300x300")
     app.mainloop()

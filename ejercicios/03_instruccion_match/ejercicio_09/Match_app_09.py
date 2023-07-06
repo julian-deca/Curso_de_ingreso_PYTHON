@@ -6,6 +6,9 @@ import customtkinter
 
 
 '''
+nombre: Julian
+apellido: Decastelli
+---
 Una agencia de viajes cobra $15.000 por cada estadía como base. 
 Luego para calcular las tarifas total realiza el siguiente cálculo, 
 en función de la estación del año y del destino elegido:
@@ -52,10 +55,47 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        destino = self.combobox_destino.get()
+        estacion = self.combobox_estaciones.get()
+        precio = 15000
+        match(destino):
+            case 'Bariloche':
+                match(estacion):
+                    case 'Verano':
+                        alert(title='EJ 09',message=precio*0.8)
+                    case 'Invierno':
+                        alert(title='EJ 09',message=precio*1.2)
+                    case 'Primavera' | 'Otoño':
+                        alert(title='EJ 09',message=precio*1.1)
+            case 'Cataratas':
+                 match(estacion):
+                    case 'Verano':
+                        alert(title='EJ 09',message=precio*1.1)
+                    case 'Invierno':
+                        alert(title='EJ 09',message=precio*0.9)
+                    case 'Primavera' | 'Otoño':
+                        alert(title='EJ 09',message=precio*1.1)
+
+            case 'Mar del plata':
+                 match(estacion):
+                    case 'Verano':
+                        alert(title='EJ 09',message=precio*1.2)
+                    case 'Invierno':
+                        alert(title='EJ 09',message=precio*0.8)
+                    case 'Primavera' | 'Otoño':
+                        alert(title='EJ 09',message=precio*1.1)
+
+            case 'Córdoba':
+                 match(estacion):
+                    case 'Verano':
+                        alert(title='EJ 09',message=precio*1.1)
+                    case 'Invierno':
+                        alert(title='EJ 09',message=precio*0.9)
+                    case 'Primavera' | 'Otoño':
+                        alert(title='EJ 09',message=precio)
+        
             
     
 if __name__ == "__main__":
     app = App()
-    app.geometry("300x300")
     app.mainloop()
