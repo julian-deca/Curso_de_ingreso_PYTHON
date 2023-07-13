@@ -55,7 +55,8 @@ class App(customtkinter.CTk):
                 else:
                     ceros+=1
         diferencia=total_positivos-total_negativos
-        alert(title='EJ 10', message=f'suma positivos:{positivos}\nsuma negativos:{negativos}\ntotal positivos:{total_positivos}\ntotal negativos:{total_negativos}\nceros:{ceros}\ndiferencia:{diferencia}')
+        mensaje=f'suma positivos:{positivos}\nsuma negativos:{negativos}\ntotal positivos:{total_positivos}\ntotal negativos:{total_negativos}\nceros:{ceros}\ndiferencia:{diferencia}'
+        alert(title='EJ 10', message=mensaje)
         
 
     
