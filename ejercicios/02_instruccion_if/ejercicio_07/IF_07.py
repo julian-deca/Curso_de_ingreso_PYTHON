@@ -40,8 +40,14 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
 
-    def btn_mostrar_on_click(self):
-        pass
+    def btn_mostrar_on_click(self): 
+        edad = int(self.txt_edad.get())
+        natividad=self.combobox_tipo.get()
+        if (natividad=='NATIVO' and edad>15) or (natividad=='NATURALIZADO' and edad>17):
+            alert(title='EJ 07',message='puede votar')
+        else:
+            alert(title='EJ 07',message='no puede votar')
+
         
         
     

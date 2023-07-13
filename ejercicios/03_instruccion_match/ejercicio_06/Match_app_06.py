@@ -40,14 +40,14 @@ class App(customtkinter.CTk):
         hora = int(self.txt_hora.get())
         match(hora):
             case hora if hora in range(7,11):
-                alert(title='EJ 06',message='Es de mañana')
+                mensaje='Es de mañana'
             case hora if hora in range(12,19):
-                alert(title='EJ 06',message='Es de tarde')
+                mensaje='Es de tarde'
             case hora if hora in range(20,24):
-                alert(title='EJ 06',message='Es de noche')
+                mensaje='Es de noche'
             case _:
-                alert(title='EJ 06',message='La hora no existe')
-
+                mensaje='La hora no existe'
+        alert(title='EJ 06',message=mensaje)
     
     
 if __name__ == "__main__":

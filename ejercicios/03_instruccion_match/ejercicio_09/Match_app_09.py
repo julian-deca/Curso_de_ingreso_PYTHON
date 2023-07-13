@@ -58,42 +58,43 @@ class App(customtkinter.CTk):
         destino = self.combobox_destino.get()
         estacion = self.combobox_estaciones.get()
         precio = 15000
+        descuento=1
         match(destino):
             case 'Bariloche':
                 match(estacion):
                     case 'Verano':
-                        alert(title='EJ 09',message=precio*0.8)
+                        descuento=0.8
                     case 'Invierno':
-                        alert(title='EJ 09',message=precio*1.2)
-                    case 'Primavera' | 'Otoño':
-                        alert(title='EJ 09',message=precio*1.1)
+                        descuento=1.2
+                    case _:
+                        descuento=1.1
             case 'Cataratas':
                  match(estacion):
                     case 'Verano':
-                        alert(title='EJ 09',message=precio*1.1)
+                        descuento=1.1
                     case 'Invierno':
-                        alert(title='EJ 09',message=precio*0.9)
-                    case 'Primavera' | 'Otoño':
-                        alert(title='EJ 09',message=precio*1.1)
+                        descuento=0.9
+                    case _:
+                        descuento=1.1
 
             case 'Mar del plata':
                  match(estacion):
                     case 'Verano':
-                        alert(title='EJ 09',message=precio*1.2)
+                        descuento=1.2
                     case 'Invierno':
-                        alert(title='EJ 09',message=precio*0.8)
-                    case 'Primavera' | 'Otoño':
-                        alert(title='EJ 09',message=precio*1.1)
+                        descuento=0.8
+                    case _:
+                        descuento=1.1
 
             case 'Córdoba':
                  match(estacion):
                     case 'Verano':
-                        alert(title='EJ 09',message=precio*1.1)
+                        descuento=1.1
                     case 'Invierno':
-                        alert(title='EJ 09',message=precio*0.9)
-                    case 'Primavera' | 'Otoño':
-                        alert(title='EJ 09',message=precio)
-        
+                        descuento=0.9
+                        
+        mensaje=precio*descuento
+        alert(title='EJ 09',message=mensaje)
             
     
 if __name__ == "__main__":

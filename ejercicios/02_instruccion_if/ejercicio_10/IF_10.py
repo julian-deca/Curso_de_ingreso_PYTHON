@@ -23,7 +23,7 @@ Al presionar el botón  'Calcular', se deberá calcular una nota aleatoria entre
 class App(customtkinter.CTk):
     
     def __init__(self):
-        super().__init__()
+        super().__init__() 
 
         # configure window
         self.title("UTN Fra")
