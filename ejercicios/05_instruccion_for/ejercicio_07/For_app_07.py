@@ -26,10 +26,39 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         valor=int(prompt(title='EJ 07',prompt='ingrese un numero'))
+        divisores=0
         for i in  range(1,valor+1):
             if valor%i==0:
                 alert(title='EJ 07',message=i)
+                divisores+=1
+        alert(title='EJ 07',message=f'se encontraron {divisores} divisores')
+
+
+
+
+
+        a=10
+        b=5
+        c=20
+        maximo=0
+        if a>maximo:
+            maximo = a
+        if b>maximo:
+            maximo = b
+        if c>maximo:
+            maximo = c
         
+
+
+
+
+
+
+
+
+
+
+
     
 if __name__ == "__main__":
     app = App()

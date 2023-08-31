@@ -23,14 +23,17 @@ class App(customtkinter.CTk):
         super().__init__()
 
         # configure window
-        self.title("UTN FRA")
+        self.title("te quiero")
 
-        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
-        self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
+        self.btn_mostrar = customtkinter.CTkButton(master=self, text="cuanto?", command=self.btn_mostrar_on_click)
+        self.btn_mostrar.grid(row=3, pady=20, columnspan=2, sticky="nsew")
 
 
     def btn_mostrar_on_click(self):
-        alert(title='EJ 01',message='Esto no anda, funciona')
+        mensaje = ' mucho'
+        while True:
+            alert(title='',message=mensaje)
+            mensaje += mensaje
         
 
 if __name__ == "__main__":

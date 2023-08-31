@@ -24,15 +24,21 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        valor=int(prompt(title='EJ 07',prompt='ingrese un numero'))
-        flag=0
+
+        valor = int(prompt(title = 'EJ 08',prompt = 'ingrese un numero'))
+        flag = 0
+
         for i in  range(2,valor):
-            if valor%i==0:
-                flag=1
-        if flag==0:
-         alert(title='EJ 08',message='es primo')
+            if valor%i == 0:
+                flag = 1
+
+        if flag == 0 and valor > 1:
+            mensaje = 'es primo'
+
         else:
-         alert(title='EJ 08',message='no es primo')
+            mensaje = 'no es primo'
+
+        alert(title = 'EJ 08',message = mensaje)
 
 if __name__ == "__main__":
     app = App()

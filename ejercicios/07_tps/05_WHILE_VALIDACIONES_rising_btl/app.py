@@ -5,6 +5,9 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+nombre: Julian
+apellido: Decastelli
+------
 Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada 
 por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
 
@@ -50,7 +53,38 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        
+        apellido = prompt(title='TP 05',prompt='ingrese apellido')
+
+        while apellido == None or not apellido.isalpha():
+            apellido = prompt(title='TP 05',prompt='ingrese apellido')
+
+        edad = prompt(title='TP 05',prompt='ingrese edad')
+
+        while (edad == None) or (not  edad.isdigit()) or (int(edad)<18) | (int(edad)>90):
+            edad = prompt(title='TP 05',prompt='ingrese edad')
+        
+        legajo = prompt(title='TP 05',prompt='ingrese numero de legajo')
+    
+        while legajo == None or (not legajo.isdigit()) or (int(legajo)<1000) | (int(legajo)>9999):
+            legajo = prompt(title='TP 05',prompt='ingrese numero de legajo')
+
+        estado_civil = prompt(title='TP 05',prompt='ingrese estado civil')
+        while estado_civil == None  or estado_civil != "Soltero/a" and estado_civil != "Casado/a" and estado_civil != "Divorciado/a" and estado_civil != "Viudo/a":
+            estado_civil = prompt(title='TP 05',prompt='ingrese estado civil')
+
+        self.txt_apellido.delete(0,'end')
+        self.txt_apellido.insert(0,apellido)
+        
+        self.txt_edad.delete(0,'end')
+        self.txt_edad.insert(0,edad)
+
+        self.txt_legajo.delete(0,'end')
+        self.txt_legajo.insert(0,legajo)
+
+        self.combobox_tipo.set(estado_civil)
+
+            
 
 
 if __name__ == "__main__":

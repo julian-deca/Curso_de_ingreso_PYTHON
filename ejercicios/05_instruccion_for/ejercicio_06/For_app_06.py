@@ -26,8 +26,12 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         valor=int(prompt(title='EJ 06',prompt='ingrese un numero'))+1
-        for i in  range(2,valor,2):
-            alert(title='EJ 06',message=i)
+        par=0
+        for i in  range(1,valor):
+            if i % 2 == 0:
+                par += 1
+        
+        alert(title='EJ 06',message=f'la cantidad de numeros pares es {par}')
             
 
         

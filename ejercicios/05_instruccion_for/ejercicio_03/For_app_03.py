@@ -32,7 +32,7 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        valor=int(prompt(title='prompt',prompt='ingrese numero'))
+        valor=int(self.txt_repetir.get())
         for i in range(0,valor):
             alert(title='EJ 03',message='Hola UTN FRA')
 

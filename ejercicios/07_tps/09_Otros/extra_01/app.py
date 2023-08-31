@@ -67,14 +67,57 @@ class App(customtkinter.CTk):
         self.lista_precio_articulo = [1000, 200]
 
     def btn_agregar_on_click(self):
-
-        pass
+        nombre = self.txt_nombre_articulo.get()
+        precio = int(self.txt_precio_articulo.get())
+        if precio>0 and nombre.isupper():
+            self.lista_nombre_articulo.append(nombre)
+            self.lista_precio_articulo.append(precio)
+            alert(title='TP EXTRA 1',message='Se cargo correctamente')
+        else:
+            alert(title='TP EXTRA 1',message='Hubo un ERROR')
+            
 
     def btn_mostrar_on_click(self):
-        pass
+        
+        i=0
+        for item in self.lista_nombre_articulo:
+            print(f'{item}: ${self.lista_precio_articulo[i]} posicion: {i}')
+            i+=1
 
     def btn_informar_on_click(self):
-        pass
+        lista_caro=[0,'']
+        lista_barato=[100000000,'']
+        sub = []
+        supra = []
+        total=0
+        i=0
+        for precio in self.lista_precio_articulo:
+            if precio>lista_caro[0]:
+                lista_caro[0]=precio
+                lista_caro[1]=self.lista_nombre_articulo[i]
+            if precio<lista_barato[0]:
+                lista_barato[0]=precio
+                lista_barato[1]=self.lista_nombre_articulo[i]
+            total+=precio
+            i+=1
+        promedio=total/i
+        i=0
+        for precio in self.lista_precio_articulo:
+            if precio > promedio:
+                supra.append(self.lista_nombre_articulo[i])
+            elif precio < promedio:
+                sub.append(self.lista_nombre_articulo[i])
+            i+=1
+        
+        mensaje=f'Articulo mas caro: {lista_caro[1]} ${lista_caro[0]}\nArticulo mas barato: {lista_barato[1]} ${lista_barato[0]}\nPrecio promedio: ${promedio}'
+        print(mensaje)
+        print('Articulos por debajo del promedio:')
+        for item in sub:
+            print(item)
+        print('Articulos por encima del promedio:')
+        for item in supra:
+            print(item)
+            
 
 
 if __name__ == "__main__":

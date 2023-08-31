@@ -38,8 +38,8 @@ class App(customtkinter.CTk):
 
         flag_primera_vez = True
         prompt_result = ""
-        minimo=100000
-        maximo=-100000
+        minimo=0
+        maximo=0
         
         while prompt_result != None:
             prompt_result = prompt(title="Prompt", prompt="Ingrese un número")
@@ -50,7 +50,7 @@ class App(customtkinter.CTk):
                     minimo = numero_ingresado
                 if  numero_ingresado > maximo or flag_primera_vez == True:
                     maximo = numero_ingresado
-                    flag_primera_vez = False
+            flag_primera_vez = False
                             
         self.txt_minimo.delete(0,100)
         self.txt_minimo.insert(0, minimo)
